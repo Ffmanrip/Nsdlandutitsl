@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .price-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="aadhar">Adhaar No (12 digit):</label>
+            <input type="text" id="aadhar" name="aadhar" pattern="[0-9]{12}" required>
+
+            <label for="mobile">Mobile No (10 digit):</label>
+            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+
+            <label for="motherName">Mother's Name:</label>
+            <input type="text" id="motherName" name="motherName" required>
+
+            <label for="fatherName">Father's Name:</label>
+            <input type="text" id="fatherName" name="fatherName" required>
+
+            <label for="address">Address (in two lines):</label>
+            <input type="text" id="address1" name="address1" placeholder="Address Line 1" required>
+            <input type="text" id="address2" name="address2" placeholder="Address Line 2" required>
+
+            <label for="panCard">PAN Card No:</label>
+            <input type="text" id="panCard" name="panCard" required>
+
+            <label for="userType">User Type:</label>
+            <select id="userType" name="userType" required>
+                <option value="" disabled selected>Select One</option>
+                <option value="Retailer">Retailer</option>
+                <option value="Distributor">Distributor</option>
+                <option value="Super Distributor">Super Distributor</option>
+            </select>
+
+            <div class="price-box">
+                <p>Retailer ID Price: ₹100</p>
+                <p>Distributor ID Price: ₹300</p>
+                <p>Super Distributor ID Price: ₹500</p>
+            </div>
+
+            <button type="button" onclick="redirectToUpload()">Continue to Upload</button>
+        </form>
+    </div>
+
+    <script>
+        function redirectToUpload() {
+            // Assuming the file upload section is in another HTML file named upload.html
+            window.location.href = "upload.html";
+        }
+    </script>
+</body>
+</html>
+
+
